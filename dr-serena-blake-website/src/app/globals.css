@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #2c3e50;
+  --primary: #4a6741;
+  --primary-light: #6b8e5a;
+  --secondary: #f8f9fa;
+  --accent: #d4a574;
+  --text-gray: #5a6c7d;
+  --border-light: #e9ecef;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Professional heading fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', Georgia, serif;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .btn-primary {
+    @apply bg-green-700 hover:bg-green-800 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 inline-block text-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-amber-100 hover:bg-amber-200 text-green-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 inline-block text-center border border-amber-200;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+  
+  .card-shadow {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+}
